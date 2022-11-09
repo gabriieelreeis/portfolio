@@ -1,0 +1,77 @@
+@import '../../shared/scss/variables';
+@import '../../shared/scss/mixins';
+
+$menu-height: 80px;
+$radius: 1rem;
+
+#notfound {
+  min-height: 100vh;
+  background-color: $bg;
+
+  .banner {
+    height: 30rem;
+    @include mq(xs) {
+      width: 100%;
+    }
+    @include mq(md) {
+      width: calc(100% - 10rem);
+    }
+
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform: none !important;
+
+    .react-parallax {
+      height: 100%;
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $bg;
+      background: linear-gradient(180deg, rgb($bg, 0) 0%, rgb($bg, 1) 85%);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10rem;
+  }
+
+  h1 {
+    color: $white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    &.banner-text {
+      font-size: 4rem;
+
+      @include mq(md) {
+        font-size: 5rem;
+      }
+
+      @include mq(lg) {
+        font-size: 7rem;
+      }
+
+      letter-spacing: 0.5rem;
+      font-weight: 800;
+    }
+  }
+
+  p {
+    color: $white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+  }
+}

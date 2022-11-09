@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600;700;800&display=swap');
+
+@import 'app/shared/scss/variables';
+@import 'app/shared/scss/mixins';
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter Tight', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+
+  @include mq(sm) {
+    max-width: $sm;
+  }
+
+  @include mq(md) {
+    max-width: $md;
+  }
+
+  @include mq(lg) {
+    max-width: $lg;
+  }
+
+  @include mq(gl) {
+    max-width: $gl;
+  }
+
+  @include mq(xl) {
+    max-width: $xl;
+  }
+}

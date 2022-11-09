@@ -1,0 +1,537 @@
+@import '../../shared/scss/variables';
+@import '../../shared/scss/mixins';
+
+$menu-height: 80px;
+$radius: 1rem;
+
+#home {
+  min-height: 100vh;
+  background-color: $bg;
+
+  header {
+    display: none !important;
+
+    &.default {
+      width: calc(100% - 2rem);
+      padding: 0 2rem;
+      left: 1rem;
+      margin-top: 1rem;
+
+      @include mq(xs) {
+        display: none;
+      }
+
+      @include mq(md) {
+        display: block;
+      }
+
+      position: fixed;
+
+      height: $menu-height;
+      background-color: $primary;
+
+      border-radius: $radius;
+
+      z-index: 99;
+      box-shadow: 0 0.125rem 0.25rem -0.125rem rgb(0 0 0 / 60%);
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-weight: 900;
+        font-size: 22px;
+        color: $white;
+        letter-spacing: 0;
+        span {
+          color: $secondary;
+        }
+      }
+
+      .menu {
+        height: $menu-height;
+        display: flex;
+        align-items: center;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            display: inline-flex;
+            margin-right: 1rem;
+            height: $menu-height;
+            line-height: $menu-height;
+
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding: 0 1rem;
+
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.2rem;
+
+            transition: all linear 0.1s;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &.active,
+            &:hover {
+              border-bottom: 0.2rem solid $secondary;
+
+              transition: all linear 0.1s;
+
+              a {
+                color: $secondary;
+              }
+            }
+
+            a {
+              color: $white;
+              text-decoration: none;
+
+              transition: all linear 0.1s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .banner {
+    @include mq(xs) {
+      width: 100%;
+      height: 35rem;
+    }
+    @include mq(md) {
+      width: calc(100% - 10rem);
+      height: 35rem;
+    }
+
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 $radius $radius;
+    transform: none !important;
+
+    .react-parallax {
+      height: 100%;
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: $bg;
+      background: linear-gradient(180deg, rgb($bg, 0) 0%, rgb($bg, 1) 85%);
+    }
+  }
+
+  .container {
+    @include mq(lg) {
+      display: flex;
+    }
+  }
+
+  .left {
+    padding-right: 0;
+    @include mq(md) {
+      padding-right: 2rem;
+    }
+
+    .info-card {
+      @include mq(xs) {
+        margin: 0 auto;
+      }
+
+      @include mq(lg) {
+        width: 19rem;
+        margin: auto;
+      }
+
+      @include mq(xl) {
+        width: 22rem;
+      }
+
+      padding: 2.5rem;
+
+      @include mq(lg) {
+        background-color: $primary;
+        min-height: calc(100vh - 12.5rem);
+        box-shadow: 0 0.125rem 0.25rem -0.125rem rgb(0 0 0 / 60%);
+      }
+
+      border-radius: $radius;
+
+      display: flex;
+      align-items: center;
+      justify-content: baseline;
+      flex-direction: column;
+
+      transform: translateY(-30rem);
+
+      @include mq(md) {
+        transform: translateY(-25rem);
+      }
+      &.fixed {
+        position: fixed;
+        top: 0;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 1.875rem;
+        height: 0.5rem;
+        width: calc(100% - 3.75rem);
+
+        @include mq(lg) {
+          background-color: $secondary;
+        }
+
+        opacity: 0.5;
+        top: -0.5rem;
+        border-radius: 0.3125rem 0.3125rem 0 0;
+      }
+
+      .avatar {
+        position: relative;
+        width: 6.875rem;
+        height: 6.875rem;
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        border-radius: 50%;
+
+        margin-bottom: 1rem;
+
+        border: 0.2rem solid rgb($secondary, 1);
+      }
+
+      .name {
+        color: $white;
+        font-size: 1.1rem;
+        letter-spacing: 0.2rem;
+        margin: 0;
+        font-weight: 700;
+      }
+
+      .description {
+        color: rgb($white, 0.4);
+        font-size: 0.8rem;
+        margin: 0;
+        letter-spacing: 0.1rem;
+        font-weight: 300;
+      }
+
+      .social {
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            display: inline-flex;
+            margin: 0 0.55rem;
+            a {
+              color: $white;
+              transition: all linear 0.1s;
+            }
+
+            &:hover {
+              a {
+                color: $secondary;
+                transition: all linear 0.1s;
+              }
+            }
+          }
+        }
+      }
+
+      .infos {
+        width: 100%;
+
+        .info {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            color: $white;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+
+            &.option {
+              font-weight: 600;
+            }
+            &.value {
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    color: white;
+
+    @include mq(md) {
+      transform: translateY(-29rem);
+    }
+
+    position: relative;
+    width: 100%;
+
+    &.fixed {
+      @include mq(md) {
+        padding-left: 17rem;
+      }
+      @include mq(lg) {
+        padding-left: 19rem;
+      }
+
+      @include mq(xl) {
+        padding-left: 22rem;
+      }
+    }
+
+    h1 {
+      &.banner-text {
+        letter-spacing: 0.5rem;
+        height: 17rem;
+
+        display: none;
+
+        @include mq(lg) {
+          font-size: 6rem;
+          display: block;
+        }
+
+        @include mq(xl) {
+          font-size: 7rem;
+        }
+
+        span {
+          display: flex;
+          align-items: flex-end;
+          span {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    position: relative;
+
+    margin: 3rem 0;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.2rem;
+      p {
+        position: relative;
+        font-weight: 600;
+        font-size: 1.2rem;
+
+        &.cap {
+          font-size: 0.7rem;
+          text-align: right;
+          margin-right: 0;
+          font-weight: 300;
+          color: $secondary;
+        }
+      }
+      .divisor {
+        width: 70%;
+      }
+    }
+
+    .card {
+      background-color: $primary;
+      padding: 2rem;
+      border-radius: $radius;
+      font-weight: 200;
+
+      &:before {
+        content: '';
+        background-color: rgb($primary, 0.5);
+        width: calc(100% - 2rem);
+        left: 1rem;
+        height: 0.5rem;
+        position: absolute;
+
+        bottom: -0.5rem;
+
+        border-radius: 0 0 $radius $radius;
+      }
+
+      &.quote {
+        &:after {
+          content: '"';
+          position: absolute;
+          font-size: 5rem;
+          transform: rotate(218deg);
+          right: 0;
+          bottom: 0;
+          color: $secondary;
+        }
+      }
+    }
+
+    &.sobre {
+      .description {
+        letter-spacing: 0.2rem;
+      }
+    }
+
+    &.skills {
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .skill {
+          .name {
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+          }
+          .percentage {
+            display: flex;
+
+            span {
+              width: 1rem;
+              height: 1rem;
+              background-color: $primary;
+
+              border-radius: 50%;
+
+              margin: 0 0.3rem;
+
+              &.active {
+                background-color: $secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.portfolio {
+      .works {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .work {
+          position: relative;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          width: calc(33.33333% - 1rem);
+          min-height: 16rem;
+
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+
+          transition: all linear 0.2s;
+
+          cursor: pointer;
+
+          border-radius: $radius;
+
+          margin-right: 1rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:before {
+            content: '';
+            transition: all linear 0.2s;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: $radius;
+          }
+
+          &:hover {
+            box-shadow: 0 0.125rem 0.25rem -0.125rem rgb(0 0 0 / 60%);
+            transform: scale(1.05);
+            &:before {
+              background-color: rgb($primary, 0.8);
+            }
+          }
+
+          .title {
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    position: relative;
+
+    &.default {
+      background-color: $primary;
+      padding: 1rem;
+      border-radius: $radius;
+      font-weight: 200;
+
+      &:before {
+        content: '';
+        background-color: rgb($primary, 0.5);
+        width: calc(100% - 2rem);
+        left: 1rem;
+        height: 0.5rem;
+        position: absolute;
+
+        top: -0.5rem;
+
+        border-radius: $radius $radius 0 0;
+      }
+
+      p {
+        font-size: 0.8rem;
+        margin: 0;
+        padding: 0;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.divisor {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px dotted rgba($white, 0.2);
+
+  margin: 1.5rem 0;
+}

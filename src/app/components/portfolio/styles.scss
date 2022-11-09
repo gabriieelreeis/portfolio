@@ -1,0 +1,10 @@
+@import '../../shared/scss/variables';
+@import '../../shared/scss/mixins';
+
+$menu-height: 80px;
+$radius: 1rem;
+
+#portfolio {
+  min-height: 100vh;
+  background-color: $bg;
+}

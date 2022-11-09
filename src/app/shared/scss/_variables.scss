@@ -1,0 +1,22 @@
+$primary: #0f192c;
+$secondary: #e2f205;
+$white: #dedee0;
+$pink: #f2836b;
+$blue: #2c3d73;
+$bg: #02162b;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
