@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { Parallax } from 'react-parallax'
 import './styles.scss'
-import bannerImage from '../../../assets/imgs/banner.webp'
+
+const bannerImage = require('../../../assets/imgs/banner.webp')
 
 function NotFoundPageComponent() {
   useEffect(() => {

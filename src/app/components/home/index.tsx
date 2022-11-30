@@ -10,8 +10,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import ReactTypingEffect from 'react-typing-effect'
 import './styles.scss'
-import bannerImage from '../../../assets/imgs/banner.webp'
-import profileImage from '../../../assets/imgs/profile.jpeg'
+
+const bannerImage = require('../../../assets/imgs/banner.webp')
+const profileImage = require('../../../assets/imgs/profile.jpeg')
 
 function HomeComponent() {
   const cardRef = React.useRef() as React.MutableRefObject<HTMLInputElement>

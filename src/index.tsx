@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import TagManager from 'react-gtm-module'
-import { store } from './app/store/store'
+import { store } from './app/store'
 import './index.scss'
 import Router from './routes'
 
